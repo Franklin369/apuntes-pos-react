@@ -2,7 +2,6 @@ import styled from "styled-components";
 import {
   LinksArray,
   SecondarylinksArray,
-  SidebarCard,
   ToggleTema,
 } from "../../../index";
 import { v } from "../../../styles/variables";
