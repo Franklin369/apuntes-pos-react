@@ -7,12 +7,10 @@ import {
 import { v } from "../../../styles/variables";
 import { NavLink } from "react-router-dom";
 import { Icon } from "@iconify/react";
-import { DesplegableLinks } from "../sidebar/selectores/DesplegableLinks";
-import { DesplegableUser } from "../../../utils/dataEstatica";
-import { useState } from "react";
+
 
 export function Sidebar({ state, setState }) {
-  const [stateDesplegableLinks, SetstateDesplegableLinks] = useState(false);
+ 
   return (
     <Main $isopen={state.toString()}>
       <span className="Sidebarbutton" onClick={() => setState(!state)}>
@@ -73,9 +71,7 @@ export function Sidebar({ state, setState }) {
               <span className={state ? "label_ver" : "label_oculto"}>MÁS</span>
             </section>
           </div>
-          {
-            stateDesplegableLinks &&  <DesplegableLinks  data={DesplegableUser} state={state} SetstateDesplegableLinks={()=>SetstateDesplegableLinks(!stateDesplegableLinks)}/>
-          }
+         
          
         </div>
 
