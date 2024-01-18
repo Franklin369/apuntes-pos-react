@@ -92,6 +92,7 @@ const Container = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
   border-right: 2px solid ${({ theme }) => theme.color2};
+  
   &::-webkit-scrollbar {
     width: 6px;
     border-radius: 10px;
@@ -131,8 +132,9 @@ const Container = styled.div`
   }
   .LinkContainer {
     margin: 9px 0;
+    margin-right:10px;
+    margin-left:8px;
     transition: all 0.3s ease-in-out;
-    padding: 0 5%;
     position: relative;
     text-transform: uppercase;
     font-weight: 700;
