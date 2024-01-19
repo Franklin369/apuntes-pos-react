@@ -11,12 +11,9 @@ const Container = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  gap: 10px;
   margin-bottom: 15px;
   width: 100%;
-  p {
-    color: #f46943;
-  }
+
   .form__group {
     position: relative;
     width: 100%;
@@ -39,7 +36,7 @@ const Container = styled.div`
     padding: 12px;
     background: #f7f7f7;
     transition: border-color 0.2s;
-    width: 100%;
+    width: 94%;
     &.disabled {
       color: #696969;
       background: #2d2d2d;
@@ -52,15 +49,7 @@ const Container = styled.div`
     font-size: 17px;
     cursor: text;
   }
-  .form__label {
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 17px;
-    color: #9b9b9b;
-    pointer-events: none;
-  }
+
   .form__field:focus {
     font-weight: 700;
     border-image-slice: 1;
