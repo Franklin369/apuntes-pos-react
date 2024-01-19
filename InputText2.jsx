@@ -34,7 +34,7 @@ const Container = styled.div`
     font-size: 17px;
     color: ${(props) => props.theme.text};
     padding: 12px;
-    background: #f7f7f7;
+    background: inherit;
     transition: border-color 0.2s;
     width: 94%;
     &.disabled {
