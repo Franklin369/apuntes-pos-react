@@ -27,7 +27,7 @@ const Container = styled.div`
   font-size: 12.2px;
   color: #91a4b7;
   gap:5px;
-  margin-bottom:10px;
+  margin:10px;
   .lock {
     border-bottom: 1px solid rgba(145, 164, 183,0.3);
     gap:5px;
