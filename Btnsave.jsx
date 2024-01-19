@@ -33,7 +33,6 @@ export function Btnsave({
 const Container = styled.button`
   font-weight: 700;
   display: flex;
-  padding: 12px 20px 12px 12px;
   font-size: 15px;
   padding: 10px 25px;
   border-radius: 16px;
