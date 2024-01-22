@@ -61,7 +61,7 @@ export function Sidebar({ state, setState }) {
           </div>
         ))}
         <div className={state ? "LinkContainer active" : "LinkContainer"}>
-          <div className="Links" onClick={()=>SetstateDesplegableLinks(!stateDesplegableLinks)}>
+          <div className="Links">
             <section className={state ? "content open" : "content"}>
               <Icon
                 color="#CE82FF"
