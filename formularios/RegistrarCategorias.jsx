@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { v } from "../../../styles/variables";
 import {
   InputText,
-  Btnsave,
+  Btn1,
   useCategoriasStore,
   Icono,
   ConvertirCapitalize,
@@ -115,7 +115,7 @@ export function RegistrarCategorias({
               <Icono>{<v.iconoimagenvacia />}</Icono>
             )}
 
-            <Btnsave
+            <Btn1
               funcion={abrirImagenes}
               titulo="+imagen(opcional)"
               color="#5f5f5f"
@@ -129,7 +129,7 @@ export function RegistrarCategorias({
             ></input>
           </PictureContainer>
           <form className="formulario" onSubmit={handleSubmit(handlesub)}>
-            <section>
+            <section className="form-subcontainer">
               <article>
                 <InputText icono={<v.iconoflechaderecha />}>
                   <input
@@ -148,7 +148,7 @@ export function RegistrarCategorias({
                 </InputText>
               </article>
 
-              <div className="colorContainer">
+              <article className="colorContainer">
                 <ContentTitle>
                   {<v.paletacolores />}
                   <span>Color</span>
@@ -156,15 +156,13 @@ export function RegistrarCategorias({
                 <div className="colorPickerContent">
                   <CirclePicker onChange={elegirColor} color={currentColor} />
                 </div>
-              </div>
+              </article>
 
-              <div className="btnguardarContent">
-                <Btnsave
-                  icono={<v.iconoguardar />}
-                  titulo="Guardar"
-                  bgcolor="#F9D70B"
-                />
-              </div>
+              <Btn1
+                icono={<v.iconoguardar />}
+                titulo="Guardar"
+                bgcolor="#F9D70B"
+              />
             </section>
           </form>
         </div>
@@ -211,7 +209,7 @@ const Container = styled.div`
       }
     }
     .formulario {
-      section {
+      .form-subcontainer {
         gap: 20px;
         display: flex;
         flex-direction: column;
