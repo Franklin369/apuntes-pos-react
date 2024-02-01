@@ -22,7 +22,7 @@ export function TablaCategorias({
   setdataSelect,
   setAccion,
 }) {
-  if (data?.length == 0) return;
+  if (data == null) return;
   const [pagina, setPagina] = useState(1);
   const [datas, setData] = useState(data);
   const [columnFilters, setColumnFilters] = useState([]);
