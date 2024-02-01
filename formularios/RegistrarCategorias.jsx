@@ -50,7 +50,7 @@ export function RegistrarCategorias({
     if (accion === "Editar") {
       const p = {
         _nombre: ConvertirCapitalize(data.descripcion),
-        _idempresa: dataempresa.id,
+        _id_empresa: dataempresa.id,
         _color: currentColor,
         _id: dataSelect.id,
       };
@@ -60,7 +60,7 @@ export function RegistrarCategorias({
         _nombre: ConvertirCapitalize(data.descripcion),
         _color: currentColor,
         _icono: "-",
-        _idempresa: dataempresa.id,
+        _id_empresa: dataempresa.id,
       };
 
       await insertarCategorias(p, file);
