@@ -29,7 +29,7 @@ export function TablaCategorias({
 
   const { eliminarCategoria } = useCategoriasStore();
   function eliminar(p) {
-    if (p.descripcion === "General") {
+    if (p.nombre === "General") {
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -54,7 +54,7 @@ export function TablaCategorias({
     });
   }
   function editar(data) {
-    if (data.descripcion === "General") {
+    if (data.nombre === "General") {
       Swal.fire({
         icon: "error",
         title: "Oops...",
