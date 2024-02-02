@@ -33,7 +33,7 @@ export function TablaCategorias({
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Esteregistro no se permite modificar ya que es valor por defecto.",
+        text: "Este registro no se permite modificar ya que es valor por defecto.",
         footer: '<a href="">...</a>',
       });
       return;
