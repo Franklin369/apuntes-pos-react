@@ -22,7 +22,7 @@ export function TablaCategorias({
   setdataSelect,
   setAccion,
 }) {
-  if (data == null) return;
+  if (data==null) return;
   const [pagina, setPagina] = useState(1);
   const [datas, setData] = useState(data);
   const [columnFilters, setColumnFilters] = useState([]);
@@ -48,7 +48,6 @@ export function TablaCategorias({
       confirmButtonText: "Si, eliminar",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        console.log(p);
         await eliminarCategoria({ id: p.id });
       }
     });
