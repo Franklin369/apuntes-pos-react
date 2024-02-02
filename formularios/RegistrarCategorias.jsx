@@ -36,7 +36,7 @@ export function RegistrarCategorias({
   const { isPending, mutate: doInsertar } = useMutation({
     mutationFn: insertar,
     mutationKey: "insertar categorias",
-    onError: (err) => console.log("The error", err),
+    onError: (err) => console.log("El error", err.message),
     onSuccess: () => cerrarFormulario(),
   });
   const handlesub = (data) => {
