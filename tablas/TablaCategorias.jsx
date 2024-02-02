@@ -2,9 +2,7 @@ import styled from "styled-components";
 import {
   ContentAccionesTabla,
   useCategoriasStore,
-  Paginacion,
-  ImagenContent,
-  Icono,
+  Paginacion,ImagenContent, Icono
 } from "../../../index";
 import Swal from "sweetalert2";
 import { v } from "../../../styles/variables";
@@ -24,7 +22,7 @@ export function TablaCategorias({
   setdataSelect,
   setAccion,
 }) {
-  if (data == null) return;
+  if (data==null) return;
   const [pagina, setPagina] = useState(1);
   const [datas, setData] = useState(data);
   const [columnFilters, setColumnFilters] = useState([]);
@@ -71,15 +69,16 @@ export function TablaCategorias({
   const columns = [
     {
       accessorKey: "icono",
-      header: "Icono",
+      header: "Icono", 
       enableSorting: false,
       cell: (info) => (
         <td data-title="Color" className="ContentCell">
-          {info.getValue() != "-" ? (
-            <ImagenContent imagen={info.getValue()} />
-          ) : (
-            <Icono>{<v.iconoimagenvacia />}</Icono>
-          )}
+          {
+            info.getValue()!="-"?(   <ImagenContent imagen={info.getValue()}/>):(<Icono>
+              {<v.iconoimagenvacia/>}
+            </Icono>)
+          }
+    
         </td>
       ),
 
@@ -90,7 +89,17 @@ export function TablaCategorias({
         return filterStatuses.includes(status?.id);
       },
     },
-
+    {
+      accessorKey: "id",
+      header: "Id",
+      cell: (info) => <span>{info.getValue()}</span>,
+      enableColumnFilter: true,
+      filterFn: (row, columnId, filterStatuses) => {
+        if (filterStatuses.length === 0) return true;
+        const status = row.getValue(columnId);
+        return filterStatuses.includes(status?.id);
+      },
+    },
     {
       accessorKey: "nombre",
       header: "Descripcion",
@@ -202,14 +211,21 @@ export function TablaCategorias({
             ))}
           </thead>
           <tbody>
-            {table.getRowModel().rows.map((item) => (
-              <tr key={item.id}>
-                {item.getVisibleCells().map((cell) => (
-                  <td key={cell.id}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </td>
-                ))}
-              </tr>
+            {table.getRowModel().rows.map(item=>(
+              
+                <tr key={item.id}>
+                  {item.getVisibleCells().map(cell => (
+                  
+                      <td key={cell.id}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
+                      </td>
+                    
+                  ))}
+                </tr>
+             
             ))}
           </tbody>
         </table>
@@ -246,6 +262,7 @@ const Container = styled.div`
       font-size: 1em;
     }
     thead {
+      
       position: absolute;
 
       padding: 0;
@@ -253,7 +270,7 @@ const Container = styled.div`
       height: 1px;
       width: 1px;
       overflow: hidden;
-
+      
       @media (min-width: ${v.bpbart}) {
         position: relative;
         height: auto;
@@ -261,8 +278,9 @@ const Container = styled.div`
         overflow: auto;
       }
       th {
-        border-bottom: 2px solid ${({ theme }) => theme.color2};
-        font-weight: 700;
+        
+        border-bottom: 2px solid ${({theme})=>theme.color2};
+        font-weight:700;
         text-align: center;
         color: ${({ theme }) => theme.text};
         &:first-of-type {
@@ -274,12 +292,14 @@ const Container = styled.div`
     tr,
     th,
     td {
+      
       display: block;
       padding: 0;
       text-align: left;
       white-space: normal;
     }
     tr {
+      
       @media (min-width: ${v.bpbart}) {
         display: table-row;
       }
@@ -287,6 +307,7 @@ const Container = styled.div`
 
     th,
     td {
+      
       padding: 0.5em;
       vertical-align: middle;
       @media (min-width: ${v.bplisa}) {
@@ -318,10 +339,12 @@ const Container = styled.div`
         }
         &:nth-of-type(even) {
           @media (min-width: ${v.bpbart}) {
+           
           }
         }
       }
       th[scope="row"] {
+        
         @media (min-width: ${v.bplisa}) {
           border-bottom: 1px solid rgba(161, 161, 161, 0.32);
         }
