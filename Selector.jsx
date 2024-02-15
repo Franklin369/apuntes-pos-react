@@ -15,7 +15,6 @@ const Container = styled.div`
  display: flex;
  justify-content:space-between;
  align-items: center;
- height: 100%;
  cursor: pointer;
  border: 2px solid ${(props) => props.color};
  border-radius: 10px;
