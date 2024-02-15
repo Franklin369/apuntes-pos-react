@@ -34,7 +34,7 @@ const Container = styled.div`
  }
  &:hover {
     background-color: ${(props) => props.color};
-    color: #000;
+    color: #fff;
   }
 
 `;
