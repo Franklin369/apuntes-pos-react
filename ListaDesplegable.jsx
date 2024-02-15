@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import { Device} from "../../index";
-export function ListaDesplegable({ data, setState, funcion, scroll,bottom }) {
+export function ListaDesplegable({ data, setState, funcion, scroll,top,state }) {
+  if(!state) return;
   function seleccionar(p) {
     funcion(p);
     setState();
   }
   return (
-    <Container scroll={scroll} $bottom={bottom}>
-      <section className="contentClose">
+    <Container scroll={scroll} $top={top}>
+      <section className="contentClose" onClick={setState}>
        x
       </section>
       <section className="contentItems">
@@ -30,7 +31,7 @@ const Container = styled.div`
   color: ${({ theme }) => theme.text};
   position: absolute;
   margin-bottom: 15px;
-  bottom: ${(props)=>props.$bottom};
+  top: ${(props)=>props.$top};
   width: 100%;
   padding: 10px;
   border-radius: 10px;
@@ -38,7 +39,7 @@ const Container = styled.div`
   z-index: 3;
   height:230px;
   @media ${() => Device.tablet} {
-  width: 400px;
+
   }
   .contentClose{
     font-weight:700;
