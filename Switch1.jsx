@@ -1,9 +1,9 @@
 import styled from "styled-components";
-export function Switch1({state,setStateInventarios}) {
+export function Switch1({state,setState}) {
   return (
     <Container>
       <label class="switch">
-        <input checked={state} class="toggle" type="checkbox" onClick={setStateInventarios} />
+        <input checked={state} class="toggle" type="checkbox" onClick={setState} />
         <span class="slider"></span>
         <span class="card-side"></span>
       </label>
