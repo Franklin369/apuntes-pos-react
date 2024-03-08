@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 export function Reloj() {
@@ -62,7 +63,7 @@ export function Reloj() {
     <Container>
       <div class="cont-reloj">
         <div class="reloj" id="reloj">
-          {hora}
+         {<Icon icon="icon-park:alarm-clock" />} {hora}
         </div>
         <div class="datos">
           <span id="fec_Datos">{fecha}</span>
@@ -81,6 +82,9 @@ const Container = styled.div`
   }
   .reloj {
     font-size: 1em;
+    align-items:center;
+    display:flex;
+    gap:5px;
   }
   .datos {
     font-size: 1em;
